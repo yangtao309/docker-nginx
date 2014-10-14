@@ -7,6 +7,8 @@ RUN mkdir /etc/nginx/ssl
 ADD default /etc/nginx/sites-available/default
 ADD default-ssl /etc/nginx/sites-available/default-ssl
 ADD proxy.conf /etc/nginx/proxy.conf
+RUN cd /etc/nginx/
+RUN mv nginx.conf nginx.conf.default
 ADD nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
